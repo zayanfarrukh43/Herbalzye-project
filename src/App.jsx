@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Layout/Header'
-// import Footer from './Components/Layout/Footer';
+import Footer from './Components/Layout/Footer';
 import Home from './Pages/Home';
 import AnnouncementBar from './Components/Home/AnnouncementBar';
 import AboutUs from './Pages/AboutUs';
@@ -18,7 +18,7 @@ const App = () => {
         <Route path="/about" element={<AboutUs />} />
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
 
     </BrowserRouter>
 

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+
 
 const Footer = () => {
   return (
@@ -32,11 +32,11 @@ const Footer = () => {
 
         <div>
           <h3 className="font-semibold">Social</h3>
-          <div className="flex gap-3 mt-2">
+          {/* <div className="flex gap-3 mt-2">
             <Facebook />
             <Instagram />
             <Twitter />
-          </div>
+          </div> */}
         </div>
 
       </div>
