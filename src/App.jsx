@@ -5,14 +5,14 @@ import Footer from './Components/Layout/Footer';
 import Home from './Pages/Home';
 import AnnouncementBar from './Components/Home/AnnouncementBar';
 import AboutUs from './Pages/AboutUs';
-
+import Whatsapp from './Components/Common/Whatsapp';
 
 const App = () => {
   return (
     <BrowserRouter>
       <AnnouncementBar />
       <Header />
-      
+      <Whatsapp />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />

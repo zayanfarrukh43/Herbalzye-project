@@ -5,19 +5,26 @@
 const categoriesData = [
   {
     id: 1,
-    title: 'Herbalyze Body Pain Oil',
-    price: 'pkr 1500',
+    title: 'HERBALYZE BODY PAIN OIL',
+    price: 'PKR 1500',
     // image: oils,
   },
   {
     id: 2,
-    title: 'Honey & Superfoods',
+    title: 'HERBALYZE BLOOD PRESSURE AND SUGAR ',
     price: 'PKR 1200',
     // image: honey,
   },
   {
     id: 3,
-    title: 'Skin Care',
+    title: 'HERBALYZE TOOTH WHITENING POWDER',
+    price: 'PKR 950',
+    // image: skincare,
+  },
+
+  {
+    id: 4,
+    title: 'HERBALZYE SENNA POWDER',
     price: 'PKR 950',
     // image: skincare,
   },

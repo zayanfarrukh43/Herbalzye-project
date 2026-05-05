@@ -32,7 +32,7 @@ const HeroSection = () => {
             src={heroImg}
             alt="Herbal Wellness"
             className="rounded-3xl w-full object-cover"
-          /> */}clr
+          /> */}
         </div>
       </div>
     </section>

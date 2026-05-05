@@ -9,25 +9,25 @@ import "swiper/css";
 const testimonials = [
   {
     name: "Hina Nadeem",
-    image: "/images/t1.jpg",
+    image: "t1.jpg",
     review:
       "I didn’t expect much at first, but this teeth whitening powder genuinely impressed me...",
   },
   {
     name: "Minhaj Akbar",
-    image: "/images/t2.jpg",
+    image: "t2.jpg",
     review:
       "The powder works well but you need to be consistent...",
   },
   {
     name: "Asma Arif",
-    image: "/images/t3.jpg",
+    image: "t3.jpg",
     review:
       "I’ve been using this senna powder for a few weeks now...",
   },
   {
     name: "Serish Nawaz",
-    image: "/images/t4.jpg",
+    image: "t4.jpg",
     review:
       "I’ve been using body pain oils for quite some time...",
   },

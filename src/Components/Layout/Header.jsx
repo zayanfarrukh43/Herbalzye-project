@@ -9,7 +9,7 @@ import {
 
 import { Link } from "react-router-dom";
 
-
+import navPic from "../../assets/herblayze.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,9 +29,22 @@ const Header = () => {
         </button>
 
         {/* Logo */}
-        <h1 className="text-lg md:text-xl font-bold tracking-wide text-[#355e3b] font-serif">
+        {/* <h1 className="text-lg md:text-xl font-bold tracking-wide text-[#355e3b] font-serif">
           HERBALYZE
-        </h1>
+        </h1> */}
+
+        <div className="flex items-center">
+          <img
+            src={navPic}
+            alt="HerbalYze Logo"
+            className="
+      h-8 sm:h-10 md:h-12 lg:h-14
+      w-auto
+      object-contain
+      rounded-xl
+    "
+          />
+        </div>
 
         {/* Icons */}
         <div className="flex items-center gap-3 text-xl text-[#2d4d2f]">
@@ -43,9 +56,8 @@ const Header = () => {
 
       {/* Dropdown Menu */}
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="bg-white border-t border-gray-200 px-5 py-4 flex flex-col gap-5 shadow-sm">
 
