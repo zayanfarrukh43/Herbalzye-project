@@ -6,7 +6,7 @@ import Home from './Pages/Home';
 import AnnouncementBar from './Components/Home/AnnouncementBar';
 import AboutUs from './Pages/AboutUs';
 import Whatsapp from './Components/Common/Whatsapp';
-
+import ContactUs from './Pages/ContactUs';  
 const App = () => {
   return (
     <BrowserRouter>
@@ -16,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
 
       <Footer />
