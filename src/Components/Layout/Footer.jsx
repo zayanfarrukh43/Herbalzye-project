@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="space-y-4">
           <h2 className="text-xl font-bold text-white">HerbalYze</h2>
 
-          <p className="text-sm">7-B, Block D, Lahore</p>
+          <p className="text-sm">Karachi</p>
 
           <div className="flex items-center gap-3 text-sm">
             <Mail className="w-5 h-5 text-[#6aa56a]" />
@@ -101,7 +101,7 @@ const Footer = () => {
 
       {/* BOTTOM */}
       <div className="text-center text-xs text-gray-400 mt-10">
-        © 2026 HerbalYze. All rights reserved.
+        © 2025 Herbalyze. All rights reserved.
       </div>
     </footer>
   );
