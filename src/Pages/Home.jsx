@@ -7,7 +7,9 @@ import Testimonials from "../Components/Home/Testimonials";
 import Promo from "../Components/Home/Promo";
 import HeroSection from '../Components/Home/HeroSection';
 import Horizontal from '../Components/Home/Horizontal';
-import Banner from '../Components/Home/Banner';
+import BotanicalSection from '../Components/Home/BotanicalSection'; 
+import Faq from '../Components/Home/Faq';
+// import Banner from '../Components/Home/Banner';
 
 const Home = () => {
   return (
@@ -17,8 +19,10 @@ const Home = () => {
       <FeaturesBar />
       <CategoriesSection />
       <Horizontal />
+      <BotanicalSection />
       <ChooseUs />
-      <Banner />
+      <Faq />
+      {/* <Banner /> */}
       <Testimonials />
       <Promo />
     </div>

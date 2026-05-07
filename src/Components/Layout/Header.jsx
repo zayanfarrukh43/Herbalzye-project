@@ -33,18 +33,13 @@ const Header = () => {
           HERBALYZE
         </h1> */}
 
-        <div className="flex items-center">
+        <Link to="/">
           <img
             src={navPic}
             alt="HerbalYze Logo"
-            className="
-      h-8 sm:h-10 md:h-12 lg:h-14
-      w-auto
-      object-contain
-      rounded-xl
-    "
+            className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain rounded-xl cursor-pointer"
           />
-        </div>
+        </Link>
 
         {/* Icons */}
         <div className="flex items-center gap-3 text-xl text-[#2d4d2f]">
