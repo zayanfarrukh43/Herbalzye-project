@@ -1,56 +1,142 @@
-import { Leaf, ShieldCheck, Truck, CreditCard } from "lucide-react";
-
-const features = [
-  { text: "100% Natural", icon: <Leaf size={18} /> },
-  { text: "Scientifically Tested", icon: <ShieldCheck size={18} /> },
-  { text: "Free Delivery", icon: <Truck size={18} /> },
-  { text: "Secure Payment", icon: <CreditCard size={18} /> },
-];
+import { ShoppingCart, Truck, CreditCard } from "lucide-react";
 
 const FeaturesBar = () => {
   return (
-    <section className="px-3 py-6">
-      
+    <div className="py-5 px-4">
       <div
         className="
-          grid gap-4 
-          grid-cols-2 
-          sm:grid-cols-2 
-          md:grid-cols-4
-          max-w-5xl mx-auto
+          max-w-[1400px]
+          mx-auto
+          shadow-sm
+          rounded-md
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          gap-6
+          px-5
+          sm:px-6
+          py-6
         "
       >
-        {features.map((feature, index) => (
-          <div
-            key={index}
+        {/* ORDER ONLINE */}
+        <div
+          className="
+            flex
+            items-center
+            gap-3
+            bg-[#f8f6f1]
+            p-4
+            rounded-md
+            transition-all
+            duration-300
+            hover:-translate-y-2
+            hover:shadow-lg
+            cursor-pointer
+          "
+        >
+          <ShoppingCart
+            size={32}
             className="
-              group flex items-center gap-3 
-              bg-white rounded-xl py-3 px-3 
-              border border-[#eee] shadow-sm 
-              transition-all duration-300 ease-in-out
-              hover:shadow-lg hover:-translate-y-1 hover:border-[#355e3b]/30
+              text-[#355e3b]
+              stroke-[1.8]
+              shrink-0
+              transition-transform
+              duration-300
+              hover:scale-110
             "
-          >
-            {/* Icon */}
-            <div
-              className="
-                bg-[#355e3b]/10 text-[#355e3b] p-2 rounded-lg 
-                transition-all duration-300
-                group-hover:bg-[#355e3b]/20 group-hover:scale-110
-              "
-            >
-              {feature.icon}
-            </div>
+          />
 
-            {/* Text */}
-            <p className="text-sm font-semibold text-[#355e3b] leading-tight">
-              {feature.text}
+          <div>
+            <h3 className="text-base sm:text-lg font-semibold text-[#1f2a1f]">
+              Order Online
+            </h3>
+
+            <p className="text-[#555] mt-1 text-sm">
+              Fuel Charges Are Now Effective
             </p>
           </div>
-        ))}
-      </div>
+        </div>
 
-    </section>
+        {/* NATIONWIDE SHIPPING */}
+        <div
+          className="
+            flex
+            items-center
+            gap-3
+            bg-[#f8f6f1]
+            p-4
+            rounded-md
+            transition-all
+            duration-300
+            hover:-translate-y-2
+            hover:shadow-lg
+            cursor-pointer
+          "
+        >
+          <Truck
+            size={32}
+            className="
+              text-[#355e3b]
+              stroke-[1.8]
+              shrink-0
+              transition-transform
+              duration-300
+              hover:scale-110
+            "
+          />
+
+          <div>
+            <h3 className="text-base sm:text-lg font-semibold text-[#1f2a1f]">
+              Nationwide Shipping
+            </h3>
+
+            <p className="text-[#555] mt-1 text-sm">
+              Mon-Sat: 9:00 AM - 7:00 PM
+            </p>
+          </div>
+        </div>
+
+        {/* PAYMENT SYSTEM */}
+        <div
+          className="
+            flex
+            items-center
+            gap-3
+            bg-[#f8f6f1]
+            p-4
+            rounded-md
+            transition-all
+            duration-300
+            hover:-translate-y-2
+            hover:shadow-lg
+            cursor-pointer
+          "
+        >
+          <CreditCard
+            size={32}
+            className="
+              text-[#355e3b]
+              stroke-[1.8]
+              shrink-0
+              transition-transform
+              duration-300
+              hover:scale-110
+            "
+          />
+
+          <div>
+            <h3 className="text-base sm:text-lg font-semibold text-[#1f2a1f]">
+              Payment System
+            </h3>
+
+            <p className="text-[#555] mt-1 text-sm">
+              Secure Payment System or Cash on Delivery
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

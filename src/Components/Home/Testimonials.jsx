@@ -42,7 +42,7 @@ const Card = ({ item }) => (
         src={item.image}
         alt={item.name}
         loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        className="w-full h-full object-cover "
       />
     </div>
 

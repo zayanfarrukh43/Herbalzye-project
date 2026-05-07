@@ -7,6 +7,8 @@ import AnnouncementBar from './Components/Home/AnnouncementBar';
 import AboutUs from './Pages/AboutUs';
 import Whatsapp from './Components/Common/Whatsapp';
 import ContactUs from './Pages/ContactUs';  
+import Track from './Pages/Track';  
+import Blogs from './Pages/Blogs';
 const App = () => {
   return (
     <BrowserRouter>
@@ -17,7 +19,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
-        
+        <Route path="/track" element={<Track />} />
+        <Route path="/blogs" element={<Blogs />} />
       </Routes>
 
       <Footer />

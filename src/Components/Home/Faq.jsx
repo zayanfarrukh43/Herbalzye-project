@@ -5,7 +5,7 @@ import {
     Minus,
     ArrowRight,
 } from "lucide-react";
-
+import { Link } from "react-router-dom";
 import herbImg from "../../assets/plant.png";
 const faqs = [
     {
@@ -71,7 +71,7 @@ const FAQ = () => {
                             Need to Know
                         </h2>
 
-                        <p
+                        {/* <p
                             className="
                 text-gray-500
                 text-lg
@@ -81,7 +81,7 @@ const FAQ = () => {
                         >
                             Explore helpful answers about our herbal products,
                             ingredients, safety, and how to use them effectively.
-                        </p>
+                        </p> */}
                     </div>
 
                     {/* CARD */}
@@ -138,7 +138,7 @@ const FAQ = () => {
         mb-5
       "
                             >
-                                24/7 Support
+                                Monday - Saturday Support
                             </span>
 
                             <h3
@@ -169,28 +169,33 @@ const FAQ = () => {
                                 to guide and support your healthy journey.
                             </p>
 
-                            <button
-                                className="
-        bg-[#d4a017]
-        hover:bg-[#e5b52a]
-        transition-all
-        duration-300
-        px-7
-        py-4
-        rounded-full
-        font-semibold
-        text-[#1f2a1f]
-        flex
-        items-center
-        gap-2
-        shadow-lg
-        hover:scale-105
-        cursor-pointer
-      "
-                            >
-                                Contact Us
-                                <ArrowRight size={18} />
-                            </button>
+
+
+                            <Link to="/contact">
+                                <button
+                                    className="
+      bg-[#d4a017]
+      hover:bg-[#e5b52a]
+      transition-all
+      duration-300
+      px-7
+      py-4
+      rounded-full
+      font-semibold
+      text-[#1f2a1f]
+      flex
+      items-center
+      gap-2
+      shadow-lg
+      hover:scale-105
+      cursor-pointer
+    "
+                                >
+                                    Contact Us
+                                    <ArrowRight size={18} />
+                                </button>
+                            </Link>
+
                         </div>
 
                         {/* IMAGE */}

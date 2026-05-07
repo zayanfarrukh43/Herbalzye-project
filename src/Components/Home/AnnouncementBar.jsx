@@ -3,7 +3,7 @@ import { Truck, CreditCard, Leaf } from "lucide-react";
 
 const messages = [
   {
-    text: "Free Delivery on All Orders",
+    text: "Fuel Charges Are Now Effective",
     icon: <Truck size={16} />,
   },
   {

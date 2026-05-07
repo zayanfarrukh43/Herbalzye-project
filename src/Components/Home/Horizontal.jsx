@@ -1,76 +1,59 @@
 import { Leaf, Truck, Flame } from "lucide-react";
 
 const Horizontal = () => {
-    return (
-        <div className="w-full overflow-hidden bg-[#355e3b] text-white py-2 relative">
+  const items = [
+    {
+      icon: <Leaf className="w-4 h-4" />,
+      text: "Organic & Halal",
+    },
+    {
+      icon: <Truck className="w-4 h-4" />,
+      text: "Fuel Charges Are Now Effective",
+    },
+    {
+      icon: <Flame className="w-4 h-4" />,
+      text: "Upto 30% OFF",
+    },
+  ];
 
-            <div className="flex whitespace-nowrap animate-scroll gap-10 items-center text-sm sm:text-base font-medium">
+  return (
+    <div className="w-full overflow-hidden bg-[#355e3b] py-3 relative">
+      
+      {/* MARQUEE */}
+      <div className="flex w-max animate-marquee">
 
-                {/* Items */}
-                <div className="flex items-center gap-2">
-                    <Leaf className="w-4 h-4" />
-                    <span>Organic & Halal</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                    <Truck className="w-4 h-4" />
-                    <span>Free Shipping</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                    <Flame className="w-4 h-4" />
-                    <span>Upto 30% OFF</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                    <Leaf className="w-4 h-4" />
-                    <span>100% Organic & Halal</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                    <Truck className="w-4 h-4" />
-                    <span>Free Shipping</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                    <Flame className="w-4 h-4" />
-                    <span>Upto 30% OFF</span>
-                </div>
-
-                {/* Duplicate for smooth loop */}
-                <div className="flex items-center gap-2">
-                    <Leaf className="w-4 h-4" />
-                    <span>Organic & Halal</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                    <Truck className="w-4 h-4" />
-                    <span>Free Shipping</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                    <Flame className="w-4 h-4" />
-                    <span>Upto 30% OFF</span>
-                </div>
-                <div className="flex items-center gap-2">
-                    <Leaf className="w-4 h-4" />
-                    <span>Organic & Halal</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                    <Truck className="w-4 h-4" />
-                    <span>Free Shipping</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                    <Flame className="w-4 h-4" />
-                    <span>Upto 30% OFF</span>
-                </div>
-
-                
+        {/* FIRST SET */}
+        <div className="flex items-center gap-12 px-6 whitespace-nowrap text-white font-medium text-sm sm:text-base">
+          {items.map((item, index) => (
+            <div key={index} className="flex items-center gap-2">
+              {item.icon}
+              <span>{item.text}</span>
             </div>
+          ))}
         </div>
-    );
+
+        {/* DUPLICATE SET */}
+        <div className="flex items-center gap-12 px-6 whitespace-nowrap text-white font-medium text-sm sm:text-base">
+          {items.map((item, index) => (
+            <div key={index} className="flex items-center gap-2">
+              {item.icon}
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* DUPLICATE SET */}
+        <div className="flex items-center gap-12 px-6 whitespace-nowrap text-white font-medium text-sm sm:text-base">
+          {items.map((item, index) => (
+            <div key={index} className="flex items-center gap-2">
+              {item.icon}
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Horizontal;

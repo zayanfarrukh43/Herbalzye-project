@@ -83,27 +83,25 @@ const Contact = () => {
               <div className="flex items-start gap-4">
                 <MapPin className="text-[#355e3b]" />
                 <p className="text-gray-700 text-sm">
-                  7-B, Block D, LDA Homes, Lahore
+                  Pechs Block 2, Karachi, Pakistan
                 </p>
               </div>
 
               <div className="flex items-center gap-4">
                 <Phone className="text-[#355e3b]" />
                 <p className="text-gray-700 text-sm">
-                  (+92) 335 4104444
+                  (+92) 3292608369
                 </p>
               </div>
 
               <div className="flex items-center gap-4">
                 <Mail className="text-[#355e3b]" />
                 <p className="text-gray-700 text-sm">
-                  info@herbalyze.com
+                  info.herbalyze@gmail.com
                 </p>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>

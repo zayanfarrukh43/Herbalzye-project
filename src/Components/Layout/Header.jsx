@@ -15,51 +15,97 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      
+      {/* NAVBAR */}
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
 
-      {/* Navbar */}
-      <div className="px-4 py-3 flex items-center justify-between">
+        {/* LEFT SIDE */}
+        <div className="flex items-center gap-4">
 
-        {/* Toggle Button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="text-2xl text-[#2d4d2f]"
-        >
-          {menuOpen ? <FiX /> : <FiMenu />}
-        </button>
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-2xl text-[#355e3b] md:hidden"
+          >
+            {menuOpen ? <FiX /> : <FiMenu />}
+          </button>
 
-        {/* Logo */}
-        {/* <h1 className="text-lg md:text-xl font-bold tracking-wide text-[#355e3b] font-serif">
-          HERBALYZE
-        </h1> */}
+          {/* LOGO */}
+          <Link to="/">
+            <img
+              src={navPic}
+              alt="HerbalYze Logo"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+            />
+          </Link>
+        </div>
 
-        <Link to="/">
-          <img
-            src={navPic}
-            alt="HerbalYze Logo"
-            className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain rounded-xl cursor-pointer"
-          />
-        </Link>
+        {/* DESKTOP MENU */}
+        <nav className="hidden md:flex items-center gap-8">
+          <Link
+            to="/"
+            className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
+          >
+            Home
+          </Link>
 
-        {/* Icons */}
-        <div className="flex items-center gap-3 text-xl text-[#2d4d2f]">
-          <FiSearch className="cursor-pointer" />
-          <FiHeart className="cursor-pointer" />
-          <FiShoppingCart className="cursor-pointer" />
+          <Link
+            to="/about"
+            className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
+          >
+            About
+          </Link>
+
+          <Link
+            to="/shop"
+            className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
+          >
+            Products
+          </Link>
+
+          <Link
+            to="/contact"
+            className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
+          >
+            Contact
+          </Link>
+
+          <Link
+            to="/track"
+            className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
+          >
+            Track Order
+          </Link>
+
+          <Link
+            to="/blogs"
+            className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
+          >
+            Blogs 
+          </Link>
+        </nav>
+
+        {/* RIGHT ICONS */}
+        <div className="flex items-center gap-3 sm:gap-4 text-xl text-[#355e3b]">
+          <FiSearch className="cursor-pointer hover:scale-110 transition" />
+          <FiHeart className="cursor-pointer hover:scale-110 transition" />
+          <FiShoppingCart className="cursor-pointer hover:scale-110 transition" />
         </div>
       </div>
 
-      {/* Dropdown Menu */}
+      {/* MOBILE DROPDOWN MENU */}
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
       >
-        <div className="bg-white border-t border-gray-200 px-5 py-4 flex flex-col gap-5 shadow-sm">
+        <div className="bg-[#f8f5ee] border-t border-gray-200 px-5 py-5 flex flex-col gap-5 shadow-md">
 
           <Link
             to="/"
             onClick={() => setMenuOpen(false)}
-            className="text-[#355e3b] font-medium text-base hover:translate-x-1 transition"
+            className="text-[#355e3b] font-medium hover:translate-x-2 transition"
           >
             Home
           </Link>
@@ -67,7 +113,7 @@ const Header = () => {
           <Link
             to="/about"
             onClick={() => setMenuOpen(false)}
-            className="text-[#355e3b] font-medium text-base hover:translate-x-1 transition"
+            className="text-[#355e3b] font-medium hover:translate-x-2 transition"
           >
             About Us
           </Link>
@@ -75,19 +121,35 @@ const Header = () => {
           <Link
             to="/shop"
             onClick={() => setMenuOpen(false)}
-            className="text-[#355e3b] font-medium text-base hover:translate-x-1 transition"
+            className="text-[#355e3b] font-medium hover:translate-x-2 transition"
           >
-            Shop
+            Products
           </Link>
 
           <Link
             to="/contact"
             onClick={() => setMenuOpen(false)}
-            className="text-[#355e3b] font-medium text-base hover:translate-x-1 transition"
+            className="text-[#355e3b] font-medium hover:translate-x-2 transition"
           >
             Contact
           </Link>
 
+          <Link
+            to="/track"
+            onClick={() => setMenuOpen(false)}
+            className="text-[#355e3b] font-medium hover:translate-x-2 transition"
+          >
+            Track Order
+          </Link>
+
+
+             <Link
+            to="/blogs"
+            onClick={() => setMenuOpen(false)}
+            className="text-[#355e3b] font-medium hover:translate-x-2 transition"
+          >
+            Blogs 
+          </Link>
         </div>
       </div>
     </header>

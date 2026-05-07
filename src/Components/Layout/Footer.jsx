@@ -6,35 +6,59 @@ import {
 import {
   FaFacebook,
   FaInstagram,
-  FaYoutube,
+  FaTiktok,
 } from "react-icons/fa";
+
+
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-[#1f2f1f] text-gray-300 pt-14 pb-8">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
-        
+
         {/* LOGO + CONTACT */}
         <div className="space-y-4">
           <h2 className="text-xl font-bold text-white">HerbalYze</h2>
 
-          <p className="text-sm">Karachi</p>
+          <p className="text-sm">Pechs Block 2, Karachi, Pakistan</p>
 
           <div className="flex items-center gap-3 text-sm">
             <Mail className="w-5 h-5 text-[#6aa56a]" />
-            <p>info@herbalyze.com</p>
+            <p>info.herbalyze@gmail.com</p>
           </div>
 
           <div className="flex items-center gap-3 text-sm">
             <Phone className="w-5 h-5 text-[#6aa56a]" />
-            <p>(+92) 335 4104444</p>
+            <p>(+92) 3292608369</p>
           </div>
+
 
           {/* Social Icons */}
           <div className="flex gap-4 pt-2 text-lg">
-            <FaFacebook className="hover:text-white cursor-pointer" />
-            <FaInstagram className="hover:text-white cursor-pointer" />
-            <FaYoutube className="hover:text-white cursor-pointer" />
+            <a
+              href="https://www.facebook.com/profile.php?id=61570610496995"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook className="hover:text-white cursor-pointer transition duration-300 hover:scale-110" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/theherbalyze?igsh=ajRjNGpnenF1NTR1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="hover:text-white cursor-pointer transition duration-300 hover:scale-110" />
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@theherbalyze" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTiktok className="hover:text-white cursor-pointer transition duration-300 hover:scale-110" />
+            </a>
           </div>
         </div>
 
@@ -54,11 +78,11 @@ const Footer = () => {
         <div>
           <h3 className="text-white font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:text-white cursor-pointer">Track Order</li>
+            <li className="hover:text-white cursor-pointer"> <Link to="/track">Track Order</Link></li>
             <li className="hover:text-white cursor-pointer">Testimonials</li>
-            <li className="hover:text-white cursor-pointer">Contact Us</li>
-            <li className="hover:text-white cursor-pointer">About Us</li>
-            <li className="hover:text-white cursor-pointer">Blogs</li>
+            <li className="hover:text-white cursor-pointer"> <Link to="/contact">Contact Us</Link></li>
+            <li className="hover:text-white cursor-pointer">  <Link to="/about">About Us</Link></li>
+            <li className="hover:text-white cursor-pointer"> <Link to="/blogs">Blogs</Link></li>
           </ul>
         </div>
 
@@ -101,7 +125,7 @@ const Footer = () => {
 
       {/* BOTTOM */}
       <div className="text-center text-xs text-gray-400 mt-10">
-        © 2025 Herbalyze. All rights reserved.
+        © 2025 <Link to="/">Herbalyze</Link>. All rights reserved.
       </div>
     </footer>
   );

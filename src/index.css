@@ -1,31 +1,15 @@
 @import "tailwindcss";
 
-:root {
-  --marquee-speed: 25s;
-}
-
-@media (max-width: 1024px) {
-  :root {
-    --marquee-speed: 18s;
-  }
-}
-
-@media (max-width: 640px) {
-  :root {
-    --marquee-speed: 12s;
-  }
-}
-
-@keyframes scroll {
+@keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
+
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-33.33%);
   }
 }
 
-.animate-scroll {
-  animation: scroll var(--marquee-speed) linear infinite;
-  will-change: transform;
+.animate-marquee {
+  animation: marquee 15s linear infinite;
 }
