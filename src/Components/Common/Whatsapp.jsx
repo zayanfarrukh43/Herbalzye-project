@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react";
 
 const Whatsapp = () => {
-  const phoneNumber = "923340936877"; // 👉 replace with your number
+  const phoneNumber = "923292608369"; // 👉 replace with your number
 
   return (
     <a

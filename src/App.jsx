@@ -9,6 +9,7 @@ import Whatsapp from './Components/Common/Whatsapp';
 import ContactUs from './Pages/ContactUs';  
 import Track from './Pages/Track';  
 import Blogs from './Pages/Blogs';
+import Services from './Pages/Services';
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/track" element={<Track />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
 
       <Footer />

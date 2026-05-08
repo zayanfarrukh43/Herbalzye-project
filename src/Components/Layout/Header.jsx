@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      
+
       {/* NAVBAR */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
 
@@ -82,7 +82,14 @@ const Header = () => {
             to="/blogs"
             className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
           >
-            Blogs 
+            Blogs
+          </Link>
+
+          <Link
+            to="/services"
+            className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
+          >
+            Services
           </Link>
         </nav>
 
@@ -96,9 +103,8 @@ const Header = () => {
 
       {/* MOBILE DROPDOWN MENU */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="bg-[#f8f5ee] border-t border-gray-200 px-5 py-5 flex flex-col gap-5 shadow-md">
 
@@ -119,7 +125,7 @@ const Header = () => {
           </Link>
 
           <Link
-            to="/shop"
+            to="/products"
             onClick={() => setMenuOpen(false)}
             className="text-[#355e3b] font-medium hover:translate-x-2 transition"
           >
@@ -143,12 +149,20 @@ const Header = () => {
           </Link>
 
 
-             <Link
+          <Link
             to="/blogs"
             onClick={() => setMenuOpen(false)}
             className="text-[#355e3b] font-medium hover:translate-x-2 transition"
           >
-            Blogs 
+            Blogs
+          </Link>
+
+            <Link
+            to="/services"
+            onClick={() => setMenuOpen(false)}
+            className="text-[#355e3b] font-medium hover:translate-x-2 transition"
+          >
+            Services
           </Link>
         </div>
       </div>
