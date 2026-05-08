@@ -1,56 +1,71 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import { Truck, CreditCard, Leaf } from "lucide-react";
 
 const messages = [
-  {
-    text: "Fuel Charges Are Now Effective",
-    icon: <Truck size={16} />,
-  },
-  {
-    text: "Secure Payment Available",
-    icon: <CreditCard size={16} />,
-  },
-  {
-    text: "100% Natural Herbal Products",
-    icon: <Leaf size={16} />,
-  },
+  { text: "Fuel Charges Are Now Effective", icon: <Truck size={14} /> },
+  { text: "Secure Payment Available", icon: <CreditCard size={14} /> },
+  { text: "100% Natural Herbal Products", icon: <Leaf size={14} /> },
+    { text: "Fuel Charges Are Now Effective", icon: <Truck size={14} /> },
+  { text: "Secure Payment Available", icon: <CreditCard size={14} /> },
+  { text: "100% Natural Herbal Products", icon: <Leaf size={14} /> },
+    { text: "Fuel Charges Are Now Effective", icon: <Truck size={14} /> },
+  { text: "Secure Payment Available", icon: <CreditCard size={14} /> },
+  { text: "100% Natural Herbal Products", icon: <Leaf size={14} /> },
 ];
 
 const AnnouncementBar = () => {
-  const [index, setIndex] = useState(0);
-  const [animate, setAnimate] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimate(false);
-
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % messages.length);
-        setAnimate(true);
-      }, 50);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="w-full bg-[#355e3b] text-white overflow-hidden">
+    <div className="w-full bg-[#1e3a24] text-white overflow-hidden relative z-[60] border-b border-white/10 shadow-sm">
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          display: flex;
+          white-space: nowrap;
+          width: max-content;
+          animation: scroll 80s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
       
-      <div className="relative h-9 flex items-center justify-center text-sm font-medium">
-        
-        <div
-          className={`flex items-center gap-2 absolute transition-all duration-500 ${
-            animate
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 -translate-y-3"
-          }`}
-        >
-          <span className="text-white">
-            {messages[index].icon}
-          </span>
-          <span>{messages[index].text}</span>
-        </div>
+      <div className="h-9 flex items-center bg-gradient-to-r from-black/20 via-transparent to-black/20">
+        <div className="animate-marquee">
+          
+          {/* Main Set */}
+          <div className="flex items-center">
+            {messages.map((item, idx) => (
+              <div key={idx} className="flex items-center px-12 group">
+                <span className="flex items-center justify-center w-6 h-6 bg-white/10 rounded-full mr-3 transition-colors group-hover:bg-[#D4AF37]/20">
+                  {React.cloneElement(item.icon, { className: "text-white group-hover:text-[#D4AF37] transition-colors" })}
+                </span>
+                <span className="text-[10px] md:text-[11px] font-bold tracking-[0.12em] uppercase whitespace-nowrap">
+                  {item.text}
+                </span>
+                <span className="ml-12 text-white/20 text-xs font-light">|</span>
+              </div>
+            ))}
+          </div>
+          
+          {/* Loop Set (Identical) */}
+          <div className="flex items-center">
+            {messages.map((item, idx) => (
+              <div key={`dup-${idx}`} className="flex items-center px-12 group">
+                <span className="flex items-center justify-center w-6 h-6 bg-white/10 rounded-full mr-3 transition-colors group-hover:bg-[#D4AF37]/20">
+                  {React.cloneElement(item.icon, { className: "text-white group-hover:text-[#D4AF37] transition-colors" })}
+                </span>
+                <span className="text-[10px] md:text-[11px] font-bold tracking-[0.12em] uppercase whitespace-nowrap">
+                  {item.text}
+                </span>
+                <span className="ml-12 text-white/20 text-xs font-light">|</span>
+              </div>
+            ))}
+          </div>
 
+        </div>
       </div>
     </div>
   );
