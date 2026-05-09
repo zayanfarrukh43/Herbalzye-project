@@ -9,7 +9,7 @@ import HeroSection from '../Components/Home/HeroSection';
 import Horizontal from '../Components/Home/Horizontal';
 import BotanicalSection from '../Components/Home/BotanicalSection'; 
 import Faq from '../Components/Home/Faq';
-// import Banner from '../Components/Home/Banner';
+import Banner from '../Components/Home/Banner';
 
 const Home = () => {
   return (
@@ -22,7 +22,7 @@ const Home = () => {
       <BotanicalSection />
       <ChooseUs />
       <Faq />
-      {/* <Banner /> */}
+      <Banner />
       <Testimonials />
       <Promo />
     </div>
