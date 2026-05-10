@@ -1,38 +1,53 @@
-// import heroImg from '../../assets/m1.png';
+import heroImg from '../../assets/banner.png';
 
 const HeroSection = () => {
   return (
-    <section className="bg-[#f8f5ee] px-4 py-8">
-      <div className="flex flex-col gap-6">
-      <div className="flex flex-col items-center justify-center text-center px-4 py-8">
+    <section className="relative w-full bg-black">
+      {/* CRITICAL CHANGE: 
+         We remove all "aspect-ratio" and "h-[vh]" classes. 
+         We let the <img> tag sit naturally inside a relative div.
+      */}
+      <div className="relative w-full h-auto">
+        
+        {/* THE IMAGE: 
+            Using 'block w-full h-auto' ensures the image 
+            scales like a normal photo without ANY cropping.
+        */}
+        <img 
+          src={heroImg} 
+          alt="Banner" 
+          className="block w-full h-auto aspect-[16/13] md:aspect-[21/9]"
+        />
 
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#1f2f1f] leading-tight mb-4 max-w-2xl">
-    Nature’s Power for Modern Wellness
-  </h2>
+        {/* DARK OVERLAY: 
+            By using 'absolute inset-0', it will always 
+            match the exact size of the image above.
+        */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
-  <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6 max-w-xl">
-    Pure herbal remedies crafted with nature’s finest ingredients.
-    Experience holistic health with HERBALYZE.
-  </p>
+        {/* CONTENT CONTAINER */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="px-6 max-w-4xl text-center">
+            
+            <h2 className="text-[18px] xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-2 md:mb-6 drop-shadow-md">
+              Nature’s Power for <br className="block sm:hidden" /> Modern Wellness
+            </h2>
 
-  <div className="flex flex-col sm:flex-row items-center gap-4">
+            <p className="text-white/95 text-[10px] xs:text-[12px] sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed mb-4 md:mb-10 max-w-[260px] xs:max-w-sm sm:max-w-2xl mx-auto drop-shadow-sm">
+              Pure herbal remedies crafted with nature’s finest ingredients. 
+              Experience holistic health with <span className="font-bold border-b border-white/30">HERBALYZE</span>.
+            </p>
 
-    <button className="bg-[#355e3b] text-white py-3 px-6 rounded-xl font-medium w-full sm:w-[170px] transition hover:opacity-90">
-      Shop Now
-    </button>
+            <div className="flex flex-row items-center justify-center gap-2 md:gap-5">
+              <button className="bg-[#355e3b] text-white py-1.5 md:py-4 px-4 md:px-10 rounded-full text-[10px] md:text-base font-bold uppercase tracking-wider hover:bg-[#2d4f32] transition-all shadow-xl">
+                Shop Now
+              </button>
 
-    <button className="bg-[#355e3b] text-white py-3 px-6 rounded-xl font-medium w-full sm:w-[175px] transition hover:opacity-90">
-      Explore Products
-    </button>
-
-  </div>
-</div>
-        <div>
-          {/* <img
-            src={heroImg}
-            alt="Herbal Wellness"
-            className="rounded-3xl w-full object-cover"
-          /> */}
+              <button className="bg-white text-[#355e3b] py-1.5 md:py-4 px-4 md:px-10 rounded-full text-[10px] md:text-base font-bold uppercase tracking-wider hover:bg-gray-100 transition-all shadow-xl">
+                Explore
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -40,6 +55,7 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 
 
 
