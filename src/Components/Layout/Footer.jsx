@@ -19,7 +19,7 @@ const Footer = () => {
 
         {/* LOGO + CONTACT */}
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-white">HerbalYze</h2>
+          <h2 className="text-xl font-bold text-white">Herbalyze</h2>
 
           <p className="text-sm">Pechs Block 2, Karachi, Pakistan</p>
 
@@ -66,10 +66,10 @@ const Footer = () => {
         <div>
           <h3 className="text-white font-semibold mb-4">Policies</h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:text-white cursor-pointer">Terms of Service</li>
-            <li className="hover:text-white cursor-pointer">Shipping Policy</li>
-            <li className="hover:text-white cursor-pointer">Privacy Policy</li>
-            <li className="hover:text-white cursor-pointer">Refund Policy</li>
+            <li className="hover:text-white cursor-pointer"> <Link to="/terms-of-service">Terms of Service</Link></li>
+            <li className="hover:text-white cursor-pointer"> <Link to="/shipping-policy">Shipping Policy</Link></li>
+            <li className="hover:text-white cursor-pointer">  <Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li className="hover:text-white cursor-pointer"> <Link to="/refund-policy">Refund Policy</Link></li>
             <li className="hover:text-white cursor-pointer">FAQs</li>
           </ul>
         </div>

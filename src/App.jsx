@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Layout/Header'
 import Footer from './Components/Layout/Footer';
@@ -10,6 +9,10 @@ import ContactUs from './Pages/ContactUs';
 import Track from './Pages/Track';  
 import Blogs from './Pages/Blogs';
 import Services from './Pages/Services';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import TermsOfService from './Pages/TermsOfService';
+import ShippingPolicy from './Pages/ShippingPolicy';
+import RefundPolicy from './Pages/RefundPolicy';
 const App = () => {
   return (
     <BrowserRouter>
@@ -23,6 +26,10 @@ const App = () => {
         <Route path="/track" element={<Track />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/shipping-policy" element={<ShippingPolicy />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
       </Routes>
 
       <Footer />

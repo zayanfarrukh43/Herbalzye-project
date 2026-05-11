@@ -54,7 +54,7 @@ const Header = () => {
             to="/about"
             className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
           >
-            About
+            About Us
           </Link>
 
           <Link
@@ -68,7 +68,7 @@ const Header = () => {
             to="/contact"
             className="text-[#355e3b] font-medium hover:text-[#2d4d2f] transition"
           >
-            Contact
+            Contact Us
           </Link>
 
           <Link
