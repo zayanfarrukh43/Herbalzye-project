@@ -14,70 +14,77 @@ const CategoryCard = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* HEADER SECTION */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-4 text-center md:text-left">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-[#355e3b]/10 text-[#355e3b] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-4">
+            <div className="inline-flex items-center gap-2 bg-[#355e3b]/10 text-[#355e3b] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-3">
               <Star size={14} fill="currentColor" />
-              Our Curated Collection
+              Our Collection
             </div>
-            <h2 className="text-[#2d2a26] text-4xl sm:text-5xl font-extrabold tracking-tight">
+            <h2 className="text-[#2d2a26] text-3xl sm:text-5xl font-extrabold tracking-tight">
               Best Seller <span className="text-[#355e3b]">Products</span>
             </h2>
           </div>
-          <button className="text-[#355e3b] font-bold border-b-2 border-[#355e3b] pb-1 hover:text-[#d4a017] hover:border-[#d4a017] transition-all">
+          <button className="text-[#355e3b] text-base font-bold border-b-2 border-[#355e3b] pb-1 hover:text-[#d4a017] hover:border-[#d4a017] transition-all cursor-pointer w-fit mx-auto md:mx-0">
             View All Collection
           </button>
         </div>
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* VERTICAL LIST (Mobile) -> GRID (Desktop) */}
+        <div className="
+          /* Mobile: Single column vertical stack with slightly larger gaps */
+          flex flex-col gap-8 
+          /* Desktop: Grid layout */
+          sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8
+        ">
           {products.map((product) => (
             <div
               key={product.id}
-              className="group bg-white rounded-[32px] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative"
+              className="
+                w-full max-w-[500px] mx-auto /* Limits width on mobile so it doesn't get TOO huge on large phones */
+                group bg-white rounded-[32px] overflow-hidden border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-500 relative
+              "
             >
               {/* BADGE */}
               {product.badge && (
-                <div className="absolute top-5 left-5 z-20 bg-[#355e3b] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                <div className="absolute top-5 left-5 z-20 bg-[#355e3b] text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
                   {product.badge}
                 </div>
               )}
 
               {/* IMAGE CONTAINER */}
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#f3f4f1]">
+              <div className="relative aspect-[5/5] sm:aspect-[4/5] overflow-hidden bg-[#f3f4f1]">
                 <img
                   src={product.image || "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=500&auto=format&fit=crop"}
                   alt={product.name}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-1000 ease-in-out"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-1000"
                 />
                 
-                {/* HOVER OVERLAY ACTIONS */}
-                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
-                  <button className="p-3 bg-white rounded-full text-slate-800 hover:bg-[#355e3b] hover:text-white transition-all shadow-xl">
+                {/* Actions */}
+                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
+                  <button className="p-3.5 bg-white rounded-full text-slate-800 hover:bg-[#355e3b] hover:text-white transition-all shadow-xl cursor-pointer">
                     <Heart size={20} />
                   </button>
-                  <button className="p-3 bg-white rounded-full text-slate-800 hover:bg-[#355e3b] hover:text-white transition-all shadow-xl">
+                  <button className="p-3.5 bg-white rounded-full text-slate-800 hover:bg-[#355e3b] hover:text-white transition-all shadow-xl cursor-pointer">
                     <Eye size={20} />
                   </button>
                 </div>
               </div>
 
               {/* TEXT CONTENT */}
-              <div className="p-7 text-center">
+              <div className="p-8 sm:p-7 text-center">
                 <p className="text-xs text-gray-400 uppercase tracking-widest mb-2 font-medium">Skincare</p>
-                <h3 className="text-xl font-bold text-[#2d2a26] mb-3 group-hover:text-[#355e3b] transition-colors">
+                <h3 className="text-xl sm:text-xl font-bold text-[#2d2a26] mb-3 group-hover:text-[#355e3b] transition-colors">
                   {product.name}
                 </h3>
 
                 <div className="flex items-center justify-center gap-3 mb-6">
-                  <span className="text-2xl font-black text-[#355e3b]">{product.price}</span>
-                  <span className="text-sm text-gray-400 line-through font-medium">{product.oldPrice}</span>
+                  <span className="text-3xl sm:text-2xl font-black text-[#355e3b]">{product.price}</span>
+                  <span className="text-base sm:text-sm text-gray-400 line-through font-medium">{product.oldPrice}</span>
                 </div>
 
-                <button className="w-full relative overflow-hidden group/btn bg-transparent border-2 border-[#355e3b] text-[#355e3b] py-3.5 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:text-white cursor-pointer">
-                  {/* BUTTON FILL ANIMATION */}
+                <button className="w-full relative overflow-hidden group/btn bg-transparent border-2 border-[#355e3b] text-[#355e3b] py-4 sm:py-3.5 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:text-white cursor-pointer">
                   <div className="absolute inset-0 w-0 group-hover/btn:w-full bg-[#355e3b] transition-all duration-300 -z-10" />
-                  <ShoppingCart size={18} className="group-hover/btn:rotate-12 transition-transform" />
+                  <ShoppingCart size={20} className="sm:size-[18px]" />
                   Add To Cart
                 </button>
               </div>
