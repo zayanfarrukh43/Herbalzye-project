@@ -1,161 +1,308 @@
-import { Heart, ShoppingCart, Star } from "lucide-react";
-
-/* SWIPER */
+import { ShoppingCart, Star } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
+// IMPORT IMAGES
+// import product1 from "../../assets/product1.webp";
+// import product2 from "../../assets/product2.webp";
+// import product3 from "../../assets/product3.webp";
+// import product4 from "../../assets/product4.webp";
 
 const products = [
   {
     id: 1,
-    image:
-      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1200&auto=format&fit=crop",
-    title: "Herbal Oil Medicine",
-    oldPrice: "$100",
-    price: "$50",
-    rating: "4.5/5",
-    badge: "Sale",
+    name: "Purifying Clay Mask",
+    price: "$19",
+    // image: product1,
   },
-
   {
     id: 2,
-    image:
-      "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&w=1200&auto=format&fit=crop",
-    title: "Natural Skin Oil",
-    oldPrice: "$120",
-    price: "$60",
-    rating: "4.8/5",
-    badge: "30% Off",
+    name: "Natural Moisturizer",
+    price: "$25",
+    // image: product2,
   },
-
   {
     id: 3,
-    image:
-      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop",
-    title: "Organic Herbal Drops",
-    oldPrice: "$80",
-    price: "$40",
-    rating: "4.7/5",
-    badge: "Hot",
+    name: "Rosemary Herbal Balm",
+    price: "$20",
+    // image: product3,
   },
-
   {
     id: 4,
-    image:
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop",
-    title: "Hair Growth Oil",
-    oldPrice: "$140",
-    price: "$70",
-    rating: "4.9/5",
-    badge: "Best Seller",
+    name: "Herbal Body Cream",
+    price: "$25",
+    // image: product4,
   },
 ];
 
 const CategoryCard = () => {
   return (
-    <section className="w-full bg-[#f5f3ee] py-14">
-      <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
+    <section className="w-full bg-[#f8f5ee] py-16 sm:py-20 overflow-hidden">
+      
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* HEADING */}
-        <div className="mb-10">
-          <h2 className="text-3xl sm:text-4xl font-serif text-[#2d2a26]">
-            Featured Products
+        {/* TOP CONTENT */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+
+          {/* SMALL BADGE */}
+          <div
+            className="
+              inline-flex
+              items-center
+              gap-2
+              bg-[#355e3b]/10
+              text-[#355e3b]
+              px-5
+              py-2
+              rounded-full
+              text-sm
+              font-semibold
+              mb-5
+            "
+          >
+            <Star size={16} fill="currentColor" />
+            Best Selling Products
+          </div>
+
+          {/* HEADING */}
+          <h2
+            className="
+              text-[#2d2a26]
+              text-4xl
+              sm:text-5xl
+              lg:text-6xl
+              font-bold
+              leading-tight
+            "
+          >
+            Best Seller{" "}
+            <span className="text-[#355e3b] relative inline-block">
+              Product
+              <span
+                className="
+                  absolute
+                  left-0
+                  bottom-1
+                  w-full
+                  h-3
+                  bg-[#d4a017]/30
+                  -z-10
+                  rounded-full
+                "
+              />
+            </span>
           </h2>
 
-          <p className="text-gray-500 mt-2">
-            Discover our herbal wellness collection
+          {/* SUBTEXT */}
+          <p
+            className="
+              text-gray-600
+              text-sm
+              sm:text-base
+              lg:text-lg
+              leading-8
+              mt-6
+            "
+          >
+            Discover our premium herbal essentials crafted
+            with natural ingredients for healthier skin,
+            wellness, and daily self-care.
           </p>
         </div>
 
-        {/* SWIPER */}
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={1}
-          breakpoints={{
-            480: {
-              slidesPerView: 1.3,
-            },
-
-            640: {
-              slidesPerView: 2,
-            },
-
-            768: {
-              slidesPerView: 2.5,
-            },
-
-            1024: {
-              slidesPerView: 4,
-            },
-          }}
+        {/* DESKTOP GRID */}
+        <div
+          className="
+            hidden
+            md:grid
+            grid-cols-2
+            lg:grid-cols-4
+            gap-7
+          "
         >
           {products.map((product) => (
-            <SwiperSlide key={product.id}>
+            <div
+              key={product.id}
+              className="
+                group
+                bg-white
+                rounded-[28px]
+                overflow-hidden
+                border
+                border-[#ebe5d8]
+                shadow-sm
+                hover:shadow-2xl
+                transition-all
+                duration-500
+              "
+            >
 
-              <div className="bg-[#f7f5f2] rounded-[28px] p-5 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#ebe5d8] group relative overflow-hidden">
+              {/* IMAGE */}
+              <div className="overflow-hidden relative">
 
-                {/* BADGE */}
-                {product.badge && (
-                  <div className="absolute top-4 left-4 z-10 bg-[#355e3b] text-white text-xs sm:text-sm font-semibold px-3 py-2 rounded-xl shadow">
-                    {product.badge}
-                  </div>
-                )}
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="
+                    w-full
+                    h-[320px]
+                    object-cover
+                    group-hover:scale-110
+                    transition-all
+                    duration-700
+                  "
+                />
 
-                {/* HEART */}
-                <button className="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur-md p-2 rounded-full hover:bg-[#355e3b] hover:text-white transition">
-                  <Heart className="w-5 h-5" />
-                </button>
-
-                {/* IMAGE */}
-                <div className="rounded-[22px] overflow-hidden bg-white">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-[220px] sm:h-[260px] object-cover group-hover:scale-105 transition duration-500"
-                  />
-                </div>
-
-                {/* CONTENT */}
-                <div className="pt-5">
-
-                  {/* TITLE */}
-                  <h3 className="text-lg sm:text-xl font-semibold text-[#2d2a26] mb-4">
-                    {product.title}
-                  </h3>
-
-                  {/* PRICE + RATING */}
-                  <div className="flex items-center justify-between mb-5 flex-wrap gap-2">
-
-                    <div className="flex items-center gap-2">
-                      <span className="text-gray-400 line-through text-lg font-semibold">
-                        {product.oldPrice}
-                      </span>
-
-                      <span className="text-[#2d2a26] text-2xl font-bold">
-                        {product.price}
-                      </span>
-                    </div>
-
-                    {/* RATING */}
-                    <div className="flex items-center gap-1 text-gray-500">
-                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-
-                      <span className="font-medium text-sm">
-                        {product.rating}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* BUTTON */}
-                  <button className="w-full border border-gray-400 rounded-full py-3 text-gray-700 font-semibold hover:bg-[#355e3b] hover:text-white hover:border-[#355e3b] transition-all duration-300 flex items-center justify-center gap-2">
-                    <ShoppingCart className="w-4 h-4" />
-                    Add To Cart
-                  </button>
-                </div>
+                {/* HOVER OVERLAY */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-black/10
+                    opacity-0
+                    group-hover:opacity-100
+                    transition
+                  "
+                />
               </div>
 
-            </SwiperSlide>
+              {/* CONTENT */}
+              <div className="p-6">
+
+                <h3
+                  className="
+                    text-xl
+                    font-semibold
+                    text-[#2d2a26]
+                    mb-2
+                  "
+                >
+                  {product.name}
+                </h3>
+
+                <p
+                  className="
+                    text-3xl
+                    font-bold
+                    text-[#355e3b]
+                    mb-5
+                  "
+                >
+                  {product.price}
+                </p>
+
+                {/* BUTTON */}
+                <button
+                  className="
+                    w-full
+                    bg-[#355e3b]
+                    hover:bg-[#2d4d2f]
+                    text-white
+                    py-3.5
+                    rounded-full
+                    font-medium
+                    flex
+                    items-center
+                    justify-center
+                    gap-2
+                    transition-all
+                    duration-300
+                    hover:scale-[1.02]
+                    cursor-pointer
+                  "
+                >
+                  <ShoppingCart size={18} />
+                  Add To Cart
+                </button>
+              </div>
+            </div>
           ))}
-        </Swiper>
+        </div>
+
+        {/* MOBILE SWIPER */}
+        <div className="md:hidden">
+          <Swiper
+            spaceBetween={18}
+            slidesPerView={1.15}
+          >
+            {products.map((product) => (
+              <SwiperSlide key={product.id}>
+
+                <div
+                  className="
+                    bg-white
+                    rounded-[24px]
+                    overflow-hidden
+                    border
+                    border-[#ebe5d8]
+                    shadow-sm
+                  "
+                >
+
+                  {/* IMAGE */}
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="
+                      w-full
+                      h-[300px]
+                      object-cover
+                    "
+                  />
+
+                  {/* CONTENT */}
+                  <div className="p-5">
+
+                    <h3
+                      className="
+                        text-lg
+                        font-semibold
+                        text-[#2d2a26]
+                        mb-2
+                      "
+                    >
+                      {product.name}
+                    </h3>
+
+                    <p
+                      className="
+                        text-2xl
+                        font-bold
+                        text-[#355e3b]
+                        mb-5
+                      "
+                    >
+                      {product.price}
+                    </p>
+
+                    <button
+                      className="
+                        w-full
+                        bg-[#355e3b]
+                        hover:bg-[#2d4d2f]
+                        text-white
+                        py-3
+                        rounded-full
+                        font-medium
+                        flex
+                        items-center
+                        justify-center
+                        gap-2
+                        transition-all
+                        duration-300
+                      "
+                    >
+                      <ShoppingCart size={18} />
+                      Add To Cart
+                    </button>
+                  </div>
+                </div>
+
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
       </div>
     </section>
   );

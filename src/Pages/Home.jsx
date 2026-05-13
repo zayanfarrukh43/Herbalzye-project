@@ -1,6 +1,6 @@
 import React from 'react'
 
-import FeaturesBar from "../Components/Home/FeaturesBar";
+// import FeaturesBar from "../Components/Home/FeaturesBar";
 import CategoriesSection from "../Components/Home/CategoriesSection";
 import ChooseUs from "../Components/Home/ChooseUs";
 import Testimonials from "../Components/Home/Testimonials";
@@ -24,7 +24,7 @@ const Home = () => {
       {/* <Banner /> */}
       <Testimonials />
       <Promo />
-      <FeaturesBar />
+      {/* <FeaturesBar /> */}
     </div>
   )
 }
