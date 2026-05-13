@@ -1,308 +1,89 @@
-import { ShoppingCart, Star } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-
-// IMPORT IMAGES
-// import product1 from "../../assets/product1.webp";
-// import product2 from "../../assets/product2.webp";
-// import product3 from "../../assets/product3.webp";
-// import product4 from "../../assets/product4.webp";
+import React from 'react';
+import { ShoppingCart, Star, Heart, Eye } from "lucide-react";
 
 const products = [
-  {
-    id: 1,
-    name: "Purifying Clay Mask",
-    price: "$19",
-    // image: product1,
-  },
-  {
-    id: 2,
-    name: "Natural Moisturizer",
-    price: "$25",
-    // image: product2,
-  },
-  {
-    id: 3,
-    name: "Rosemary Herbal Balm",
-    price: "$20",
-    // image: product3,
-  },
-  {
-    id: 4,
-    name: "Herbal Body Cream",
-    price: "$25",
-    // image: product4,
-  },
+  { id: 1, name: "Purifying Clay Mask", price: "$19", oldPrice: "$25", badge: "Best Seller" },
+  { id: 2, name: "Natural Moisturizer", price: "$25", oldPrice: "$30", badge: "New" },
+  { id: 3, name: "Rosemary Herbal Balm", price: "$20", oldPrice: "$28", badge: "" },
+  { id: 4, name: "Herbal Body Cream", price: "$25", oldPrice: "$35", badge: "Sale" },
 ];
 
 const CategoryCard = () => {
   return (
-    <section className="w-full bg-[#f8f5ee] py-16 sm:py-20 overflow-hidden">
-      
+    <section className="w-full bg-[#fcfaf7] py-16 sm:py-24">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* TOP CONTENT */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-
-          {/* SMALL BADGE */}
-          <div
-            className="
-              inline-flex
-              items-center
-              gap-2
-              bg-[#355e3b]/10
-              text-[#355e3b]
-              px-5
-              py-2
-              rounded-full
-              text-sm
-              font-semibold
-              mb-5
-            "
-          >
-            <Star size={16} fill="currentColor" />
-            Best Selling Products
+        
+        {/* HEADER SECTION */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 bg-[#355e3b]/10 text-[#355e3b] px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-4">
+              <Star size={14} fill="currentColor" />
+              Our Curated Collection
+            </div>
+            <h2 className="text-[#2d2a26] text-4xl sm:text-5xl font-extrabold tracking-tight">
+              Best Seller <span className="text-[#355e3b]">Products</span>
+            </h2>
           </div>
-
-          {/* HEADING */}
-          <h2
-            className="
-              text-[#2d2a26]
-              text-4xl
-              sm:text-5xl
-              lg:text-6xl
-              font-bold
-              leading-tight
-            "
-          >
-            Best Seller{" "}
-            <span className="text-[#355e3b] relative inline-block">
-              Product
-              <span
-                className="
-                  absolute
-                  left-0
-                  bottom-1
-                  w-full
-                  h-3
-                  bg-[#d4a017]/30
-                  -z-10
-                  rounded-full
-                "
-              />
-            </span>
-          </h2>
-
-          {/* SUBTEXT */}
-          <p
-            className="
-              text-gray-600
-              text-sm
-              sm:text-base
-              lg:text-lg
-              leading-8
-              mt-6
-            "
-          >
-            Discover our premium herbal essentials crafted
-            with natural ingredients for healthier skin,
-            wellness, and daily self-care.
-          </p>
+          <button className="text-[#355e3b] font-bold border-b-2 border-[#355e3b] pb-1 hover:text-[#d4a017] hover:border-[#d4a017] transition-all">
+            View All Collection
+          </button>
         </div>
 
-        {/* DESKTOP GRID */}
-        <div
-          className="
-            hidden
-            md:grid
-            grid-cols-2
-            lg:grid-cols-4
-            gap-7
-          "
-        >
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
             <div
               key={product.id}
-              className="
-                group
-                bg-white
-                rounded-[28px]
-                overflow-hidden
-                border
-                border-[#ebe5d8]
-                shadow-sm
-                hover:shadow-2xl
-                transition-all
-                duration-500
-              "
+              className="group bg-white rounded-[32px] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative"
             >
+              {/* BADGE */}
+              {product.badge && (
+                <div className="absolute top-5 left-5 z-20 bg-[#355e3b] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                  {product.badge}
+                </div>
+              )}
 
-              {/* IMAGE */}
-              <div className="overflow-hidden relative">
-
+              {/* IMAGE CONTAINER */}
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#f3f4f1]">
                 <img
-                  src={product.image}
+                  src={product.image || "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=500&auto=format&fit=crop"}
                   alt={product.name}
-                  className="
-                    w-full
-                    h-[320px]
-                    object-cover
-                    group-hover:scale-110
-                    transition-all
-                    duration-700
-                  "
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-1000 ease-in-out"
                 />
-
-                {/* HOVER OVERLAY */}
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    bg-black/10
-                    opacity-0
-                    group-hover:opacity-100
-                    transition
-                  "
-                />
+                
+                {/* HOVER OVERLAY ACTIONS */}
+                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-3">
+                  <button className="p-3 bg-white rounded-full text-slate-800 hover:bg-[#355e3b] hover:text-white transition-all shadow-xl">
+                    <Heart size={20} />
+                  </button>
+                  <button className="p-3 bg-white rounded-full text-slate-800 hover:bg-[#355e3b] hover:text-white transition-all shadow-xl">
+                    <Eye size={20} />
+                  </button>
+                </div>
               </div>
 
-              {/* CONTENT */}
-              <div className="p-6">
-
-                <h3
-                  className="
-                    text-xl
-                    font-semibold
-                    text-[#2d2a26]
-                    mb-2
-                  "
-                >
+              {/* TEXT CONTENT */}
+              <div className="p-7 text-center">
+                <p className="text-xs text-gray-400 uppercase tracking-widest mb-2 font-medium">Skincare</p>
+                <h3 className="text-xl font-bold text-[#2d2a26] mb-3 group-hover:text-[#355e3b] transition-colors">
                   {product.name}
                 </h3>
 
-                <p
-                  className="
-                    text-3xl
-                    font-bold
-                    text-[#355e3b]
-                    mb-5
-                  "
-                >
-                  {product.price}
-                </p>
+                <div className="flex items-center justify-center gap-3 mb-6">
+                  <span className="text-2xl font-black text-[#355e3b]">{product.price}</span>
+                  <span className="text-sm text-gray-400 line-through font-medium">{product.oldPrice}</span>
+                </div>
 
-                {/* BUTTON */}
-                <button
-                  className="
-                    w-full
-                    bg-[#355e3b]
-                    hover:bg-[#2d4d2f]
-                    text-white
-                    py-3.5
-                    rounded-full
-                    font-medium
-                    flex
-                    items-center
-                    justify-center
-                    gap-2
-                    transition-all
-                    duration-300
-                    hover:scale-[1.02]
-                    cursor-pointer
-                  "
-                >
-                  <ShoppingCart size={18} />
+                <button className="w-full relative overflow-hidden group/btn bg-transparent border-2 border-[#355e3b] text-[#355e3b] py-3.5 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:text-white cursor-pointer">
+                  {/* BUTTON FILL ANIMATION */}
+                  <div className="absolute inset-0 w-0 group-hover/btn:w-full bg-[#355e3b] transition-all duration-300 -z-10" />
+                  <ShoppingCart size={18} className="group-hover/btn:rotate-12 transition-transform" />
                   Add To Cart
                 </button>
               </div>
             </div>
           ))}
         </div>
-
-        {/* MOBILE SWIPER */}
-        <div className="md:hidden">
-          <Swiper
-            spaceBetween={18}
-            slidesPerView={1.15}
-          >
-            {products.map((product) => (
-              <SwiperSlide key={product.id}>
-
-                <div
-                  className="
-                    bg-white
-                    rounded-[24px]
-                    overflow-hidden
-                    border
-                    border-[#ebe5d8]
-                    shadow-sm
-                  "
-                >
-
-                  {/* IMAGE */}
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="
-                      w-full
-                      h-[300px]
-                      object-cover
-                    "
-                  />
-
-                  {/* CONTENT */}
-                  <div className="p-5">
-
-                    <h3
-                      className="
-                        text-lg
-                        font-semibold
-                        text-[#2d2a26]
-                        mb-2
-                      "
-                    >
-                      {product.name}
-                    </h3>
-
-                    <p
-                      className="
-                        text-2xl
-                        font-bold
-                        text-[#355e3b]
-                        mb-5
-                      "
-                    >
-                      {product.price}
-                    </p>
-
-                    <button
-                      className="
-                        w-full
-                        bg-[#355e3b]
-                        hover:bg-[#2d4d2f]
-                        text-white
-                        py-3
-                        rounded-full
-                        font-medium
-                        flex
-                        items-center
-                        justify-center
-                        gap-2
-                        transition-all
-                        duration-300
-                      "
-                    >
-                      <ShoppingCart size={18} />
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
-
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
       </div>
     </section>
   );
