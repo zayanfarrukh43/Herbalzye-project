@@ -154,7 +154,7 @@ const BotanicalSection = () => {
               
               {[
                 "100% Herbal Ingredients",
-                "Non-GMO",
+                "Organic Certified",
                 "Chemical-Free",
                 "No Artificial Additives",
               ].map((item, index) => (

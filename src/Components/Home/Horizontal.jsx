@@ -15,7 +15,7 @@ const messages = [
 
 const Horizontal = () => {
   return (
-    <div className="w-full bg-[#1e3a24] text-white overflow-hidden relative z-[60] border-b border-white/10 shadow-sm">
+    <div className="w-full bg-[#1e3a24] text-white overflow-hidden relative  border-b border-white/10 shadow-sm">
       <style>{`
         @keyframes scroll {
           0% { transform: translateX(0); }

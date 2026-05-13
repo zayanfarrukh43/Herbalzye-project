@@ -80,18 +80,12 @@ const TermsOfService = () => {
             <ul className="list-disc pl-6 space-y-3">
               <li>All orders are subject to availability.</li>
 
+              
               <li>
-                Herbalyze reserves the right to refuse or cancel any
-                order at any time.
+                Payments must be completed after order processing.
               </li>
 
-              <li>
-                Payments must be completed before order processing.
-              </li>
-
-              <li>
-                Prices may change without prior notice.
-              </li>
+             
             </ul>
           </div>
         </div>

@@ -1,52 +1,557 @@
-import heroImg from '../../assets/banner.png';
 
+// import { Leaf, ShieldCheck, HeartPulse, Truck } from "lucide-react";
+
+// const WhyChooseUs = () => {
+//   return (
+//     <section className="w-full bg-[#f5f3ee] py-16 sm:py-20 px-4 sm:px-6 lg:px-10 overflow-hidden">
+//       <div className="max-w-[1400px] mx-auto">
+
+//         {/* TOP HEADING */}
+//         <div className="text-center max-w-[750px] mx-auto mb-14">
+
+//           <span
+//             className="
+//               inline-block
+//               bg-[#355e3b]/10
+//               text-[#355e3b]
+//               px-5
+//               py-2
+//               rounded-full
+//               text-sm
+//               font-semibold
+//               mb-5
+//             "
+//           >
+//             Why Choose Herbalyze
+//           </span>
+
+//           <h2
+//             className="
+//               text-3xl
+//               sm:text-4xl
+//               md:text-5xl
+//               font-bold
+//               text-[#1f2a1f]
+//               leading-tight
+//             "
+//           >
+//             Trusted Herbal Wellness
+//             <span className="block text-[#355e3b] mt-2">
+//               For Your Healthy Lifestyle
+//             </span>
+//           </h2>
+
+//           <p
+//             className="
+//               text-gray-600
+//               mt-6
+//               text-sm
+//               sm:text-base
+//               md:text-lg
+//               leading-8
+//             "
+//           >
+//             Discover premium herbal products carefully crafted with
+//             natural ingredients to support your daily wellness journey.
+//           </p>
+//         </div>
+
+//         {/* CARDS */}
+//         <div
+//           className="
+//             grid
+//             grid-cols-1
+//             sm:grid-cols-2
+//             lg:grid-cols-4
+//             gap-6
+//           "
+//         >
+
+//           {/* CARD 1 */}
+//           <div
+//             className="
+//               bg-white
+//               rounded-[30px]
+//               p-7
+//               border
+//               border-[#ebe5d8]
+//               shadow-sm
+//               hover:shadow-2xl
+//               transition-all
+//               duration-500
+//               hover:-translate-y-2
+//               group
+//             "
+//           >
+//             <div
+//               className="
+//                 w-16
+//                 h-16
+//                 rounded-2xl
+//                 bg-[#355e3b]/10
+//                 flex
+//                 items-center
+//                 justify-center
+//                 mb-6
+//                 group-hover:bg-[#355e3b]
+//                 transition-all
+//               "
+//             >
+//               <Leaf className="w-8 h-8 text-[#355e3b] group-hover:text-white" />
+//             </div>
+
+//             <h3 className="text-2xl font-semibold text-[#1f2a1f] mb-4">
+//               Natural Ingredients
+//             </h3>
+
+//             <p className="text-gray-600 leading-7 text-sm sm:text-base">
+//               We use carefully selected herbal ingredients for safe,
+//               effective, and natural wellness solutions.
+//             </p>
+//           </div>
+
+//           {/* CARD 2 */}
+//           <div
+//             className="
+//               bg-white
+//               rounded-[30px]
+//               p-7
+//               border
+//               border-[#ebe5d8]
+//               shadow-sm
+//               hover:shadow-2xl
+//               transition-all
+//               duration-500
+//               hover:-translate-y-2
+//               group
+//             "
+//           >
+//             <div
+//               className="
+//                 w-16
+//                 h-16
+//                 rounded-2xl
+//                 bg-[#355e3b]/10
+//                 flex
+//                 items-center
+//                 justify-center
+//                 mb-6
+//                 group-hover:bg-[#355e3b]
+//                 transition-all
+//               "
+//             >
+//               <ShieldCheck className="w-8 h-8 text-[#355e3b] group-hover:text-white" />
+//             </div>
+
+//             <h3 className="text-2xl font-semibold text-[#1f2a1f] mb-4">
+//               Trusted Quality
+//             </h3>
+
+//             <p className="text-gray-600 leading-7 text-sm sm:text-base">
+//               Herbalyze products are prepared with quality standards
+//               to ensure customer satisfaction and trust.
+//             </p>
+//           </div>
+
+//           {/* CARD 3 */}
+//           <div
+//             className="
+//               bg-white
+//               rounded-[30px]
+//               p-7
+//               border
+//               border-[#ebe5d8]
+//               shadow-sm
+//               hover:shadow-2xl
+//               transition-all
+//               duration-500
+//               hover:-translate-y-2
+//               group
+//             "
+//           >
+//             <div
+//               className="
+//                 w-16
+//                 h-16
+//                 rounded-2xl
+//                 bg-[#355e3b]/10
+//                 flex
+//                 items-center
+//                 justify-center
+//                 mb-6
+//                 group-hover:bg-[#355e3b]
+//                 transition-all
+//               "
+//             >
+//               <HeartPulse className="w-8 h-8 text-[#355e3b] group-hover:text-white" />
+//             </div>
+
+//             <h3 className="text-2xl font-semibold text-[#1f2a1f] mb-4">
+//               Wellness Support
+//             </h3>
+
+//             <p className="text-gray-600 leading-7 text-sm sm:text-base">
+//               Get expert wellness guidance and herbal recommendations
+//               for a healthier and balanced lifestyle.
+//             </p>
+//           </div>
+
+//           {/* CARD 4 */}
+//           <div
+//             className="
+//               bg-white
+//               rounded-[30px]
+//               p-7
+//               border
+//               border-[#ebe5d8]
+//               shadow-sm
+//               hover:shadow-2xl
+//               transition-all
+//               duration-500
+//               hover:-translate-y-2
+//               group
+//             "
+//           >
+//             <div
+//               className="
+//                 w-16
+//                 h-16
+//                 rounded-2xl
+//                 bg-[#355e3b]/10
+//                 flex
+//                 items-center
+//                 justify-center
+//                 mb-6
+//                 group-hover:bg-[#355e3b]
+//                 transition-all
+//               "
+//             >
+//               <Truck className="w-8 h-8 text-[#355e3b] group-hover:text-white" />
+//             </div>
+
+//             <h3 className="text-2xl font-semibold text-[#1f2a1f] mb-4">
+//               Fast Delivery
+//             </h3>
+
+//             <p className="text-gray-600 leading-7 text-sm sm:text-base">
+//               We provide reliable nationwide shipping with safe and
+//               timely delivery across Pakistan.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default WhyChooseUs;
+
+
+
+
+import { ArrowRight, ShoppingCart, Leaf } from "lucide-react";
+// import productImg from "../../assets/blood.png";
 const HeroSection = () => {
   return (
-    <section className="relative w-full bg-black">
-      {/* CRITICAL CHANGE: 
-         We remove all "aspect-ratio" and "h-[vh]" classes. 
-         We let the <img> tag sit naturally inside a relative div.
-      */}
-      <div className="relative w-full h-auto">
+    <section className="w-full bg-[#f8f5ee] overflow-hidden">
+      
+      <div
+        className="
+          max-w-[1400px]
+          mx-auto
+          px-4
+          sm:px-6
+          lg:px-8
+          py-6
+          sm:py-10
+          lg:py-16
+        "
+      >
         
-        {/* THE IMAGE: 
-            Using 'block w-full h-auto' ensures the image 
-            scales like a normal photo without ANY cropping.
-        */}
-        <img 
-          src={heroImg} 
-          alt="Banner" 
-          className="block w-full h-auto aspect-[16/13] md:aspect-[21/9]"
-        />
+        {/* HERO CONTAINER */}
+        <div
+          className="
+            relative
+            overflow-hidden
+            rounded-[28px]
+            bg-gradient-to-br
+            from-[#163020]
+            via-[#355e3b]
+            to-[#1b4332]
+            shadow-2xl
+          "
+        >
 
-        {/* DARK OVERLAY: 
-            By using 'absolute inset-0', it will always 
-            match the exact size of the image above.
-        */}
-        <div className="absolute inset-0 bg-black/50"></div>
+          {/* BACKGROUND EFFECTS */}
+          <div className="absolute inset-0 overflow-hidden">
 
-        {/* CONTENT CONTAINER */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="px-6 max-w-4xl text-center">
-            
-            <h2 className="text-[18px] xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-2 md:mb-6 drop-shadow-md">
-              Nature’s Power for <br className="block sm:hidden" /> Modern Wellness
-            </h2>
+            {/* Glow 1 */}
+            <div
+              className="
+                absolute
+                top-[-100px]
+                left-[-80px]
+                w-[300px]
+                h-[300px]
+                bg-[#d4a017]/20
+                rounded-full
+                blur-3xl
+              "
+            />
 
-            <p className="text-white/95 text-[10px] xs:text-[12px] sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed mb-4 md:mb-10 max-w-[260px] xs:max-w-sm sm:max-w-2xl mx-auto drop-shadow-sm">
-              Pure herbal remedies crafted with nature’s finest ingredients. 
-              Experience holistic health with <span className="font-bold border-b border-white/30">HERBALYZE</span>.
-            </p>
+            {/* Glow 2 */}
+            <div
+              className="
+                absolute
+                bottom-[-120px]
+                right-[-80px]
+                w-[350px]
+                h-[350px]
+                bg-green-300/10
+                rounded-full
+                blur-3xl
+              "
+            />
 
-            <div className="flex flex-row items-center justify-center gap-2 md:gap-5">
-              <button className="bg-[#355e3b] text-white py-1.5 md:py-4 px-4 md:px-10 rounded-full text-[10px] md:text-base font-bold uppercase tracking-wider hover:bg-[#2d4f32] transition-all shadow-xl">
-                Shop Now
-              </button>
+            {/* Decorative Leaves */}
+            <Leaf
+              className="
+                absolute
+                top-16
+                right-20
+                text-white/5
+                w-44
+                h-44
+                rotate-12
+              "
+            />
 
-              <button className="bg-white text-[#355e3b] py-1.5 md:py-4 px-4 md:px-10 rounded-full text-[10px] md:text-base font-bold uppercase tracking-wider hover:bg-gray-100 transition-all shadow-xl">
-                Explore
-              </button>
+            <Leaf
+              className="
+                absolute
+                bottom-10
+                left-1/2
+                text-white/5
+                w-36
+                h-36
+                -rotate-12
+              "
+            />
+          </div>
+
+          {/* CONTENT */}
+          <div
+            className="
+              relative
+              z-10
+              grid
+              grid-cols-1
+              lg:grid-cols-2
+              items-center
+              gap-10
+              px-5
+              sm:px-8
+              lg:px-16
+              py-12
+              sm:py-16
+              lg:py-20
+            "
+          >
+
+            {/* LEFT SIDE */}
+            <div className="text-center lg:text-left">
+
+              {/* BADGE */}
+              <div
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  bg-white/10
+                  border
+                  border-white/10
+                  backdrop-blur-md
+                  text-[#f4c542]
+                  px-4
+                  sm:px-5
+                  py-2
+                  rounded-full
+                  text-xs
+                  sm:text-sm
+                  font-semibold
+                  mb-5
+                "
+              >
+                <Leaf size={18} />
+                Prestige Herbal Care
+              </div>
+
+              {/* HEADING */}
+              <h1
+                className="
+                  text-white
+                  font-bold
+                  leading-[1.05]
+                  text-[30px]
+                  sm:text-3xl
+                  md:text-5xlxl
+                  lg:text-6xl
+                  tracking-tight
+                "
+              >
+                Trusted Herbal Wellness
+                <br />
+                For Your Healthy Lifestyle
+              </h1>
+
+              {/* SUBTEXT */}
+              <p
+                className="
+                  text-white/80
+                  text-sm
+                  sm:text-base
+                  lg:text-lg
+                  leading-7
+                  sm:leading-8
+                  mt-6
+                  max-w-2xl
+                  mx-auto
+                  lg:mx-0
+                "
+              >
+                Discover premium herbal products carefully crafted
+                with natural ingredients to support your daily
+                wellness journey.
+              </p>
+
+              {/* BUTTONS */}
+              <div
+                className="
+                  flex
+                  flex-col
+                  sm:flex-row
+                  items-center
+                  lg:items-start
+                  gap-4
+                  mt-8
+                "
+              >
+
+                {/* ORDER BUTTON */}
+                <button
+                  className="
+                    w-full
+                    sm:w-auto
+                    bg-[#d4a017]
+                    hover:bg-[#b88b12]
+                    text-[#1f2a1f]
+                    px-6
+                    sm:px-8
+                    py-3
+                    sm:py-3.5
+                    rounded-full
+                    font-semibold
+                    text-sm
+                    sm:text-base
+                    flex
+                    items-center
+                    justify-center
+                    gap-3
+                    transition-all
+                    duration-300
+                    hover:scale-105
+                    shadow-xl
+                    cursor-pointer
+                  "
+                >
+                  Order Today
+                  <ShoppingCart size={18} />
+                </button>
+
+                {/* LEARN BUTTON */}
+                <button
+                  className="
+                    w-full
+                    sm:w-auto
+                    bg-white/10
+                    hover:bg-white/20
+                    border
+                    border-white/10
+                    backdrop-blur-md
+                    text-white
+                    px-6
+                    sm:px-8
+                    py-3
+                    sm:py-3.5
+                    rounded-full
+                    font-semibold
+                    text-sm
+                    sm:text-base
+                    flex
+                    items-center
+                    justify-center
+                    gap-3
+                    transition-all
+                    duration-300
+                    hover:scale-105
+                    cursor-pointer
+                  "
+                >
+                  Learn More
+                  <ArrowRight size={18} />
+                </button>
+              </div>
             </div>
+
+            {/* RIGHT SIDE IMAGE */}
+            <div
+              className="
+                relative
+                flex
+                justify-center
+                items-center
+                mt-4
+                lg:mt-0
+              "
+            >
+
+              {/* IMAGE GLOW */}
+              <div
+                className="
+                  absolute
+                  w-[240px]
+                  sm:w-[340px]
+                  lg:w-[420px]
+                  h-[240px]
+                  sm:h-[340px]
+                  lg:h-[420px]
+                  bg-[#d4a017]/20
+                  rounded-full
+                  blur-3xl
+                "
+              />
+
+              {/* PRODUCT IMAGE */}
+              {/* <img
+                src={productImg}
+                alt="Herbal Product"
+                className="
+                  relative
+                  z-10
+                  w-full
+                  max-w-[240px]
+                  sm:max-w-[320px]
+                  md:max-w-[420px]
+                  lg:max-w-[500px]
+                  object-contain
+                  drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]
+                  hover:scale-105
+                  transition-all
+                  duration-500
+                "
+              /> */}
+            </div>
+
           </div>
         </div>
       </div>
@@ -57,56 +562,3 @@ const HeroSection = () => {
 export default HeroSection;
 
 
-
-
-// import heroImg from '../../assets/banner.png';
-// const HeroSection = () => {
-//   return (
-//     <section className="w-full relative">
-      
-//       {/* Image */}
-//       <div className="h-[70vh] sm:h-[80vh] md:h-[90vh]">
-//         <img
-//           src={heroImg}
-//           alt="Pain Relief Oil"
-//           className="w-full h-full object-cover"
-//         />
-//       </div>
-
-//       {/* Overlay */}
-//       <div className="absolute inset-0 bg-black/40"></div>
-
-//       {/* Content */}
-//       <div className="absolute inset-0 flex items-center">
-//         <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
-          
-//           <div className="max-w-full sm:max-w-lg md:max-w-xl text-white">
-            
-//             {/* Rating */}
-//             <p className="text-xs sm:text-sm mb-2 text-green-200">
-//               ★★★★☆ Trusted by 500,000+ Satisfied Customers
-//             </p>
-
-//             {/* Heading */}
-//             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 font-serif">
-//               Our Most Trusted Pain Relief Oil
-//             </h1>
-
-//             {/* Description */}
-//             <p className="text-sm sm:text-base md:text-lg text-gray-200 mb-6">
-//               Fast-absorbing, steroid-free formula, science-backed to ease pain naturally.
-//             </p>
-
-//             {/* Button */}
-//             <button className="bg-[#355e3b] hover:bg-[#2d4d2f] px-5 sm:px-7 md:px-8 py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base transition">
-//               Shop Our Best-Seller
-//             </button>
-//           </div>
-
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default HeroSection;
